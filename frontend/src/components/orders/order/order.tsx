@@ -2,6 +2,7 @@ import React from 'react';
 import * as S from './styles';
 
 export interface OrderType {
+    id: string;
     title: string;
     description: string;
     ordererId: string;

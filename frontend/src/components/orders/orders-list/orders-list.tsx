@@ -9,8 +9,8 @@ export interface Props {
 const OrdersList = ({ orders }: Props) => {
     return (
         <S.StyledOrdersList>
-            {orders.map((order, i) => (
-                <Order key={i} order={order} />
+            {orders.map((order) => (
+                <Order key={order.id} order={order} />
             ))}
         </S.StyledOrdersList>
     );
