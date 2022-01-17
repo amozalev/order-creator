@@ -1,12 +1,11 @@
 import React from 'react';
-import Order, { OrderType } from '../order/order';
+import Order from '../order/order';
 import * as S from './styles';
+import { ORDERS } from '../../../constants';
 
-export interface Props {
-    orders: OrderType[];
-}
+const OrdersList = () => {
+    const orders = ORDERS;
 
-const OrdersList = ({ orders }: Props) => {
     return (
         <S.StyledOrdersList>
             {orders.map((order) => (

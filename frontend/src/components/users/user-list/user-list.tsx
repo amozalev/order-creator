@@ -1,12 +1,11 @@
 import React from 'react';
 import * as S from './styles';
-import User, { UserType } from '../user/user';
+import User from '../user/user';
+import { USERS } from '../../../constants';
 
-export interface Props {
-    users: UserType[];
-}
+const UserList = () => {
+    const users = USERS;
 
-const UserList = ({ users }: Props) => {
     return (
         <S.StyledUserList>
             {users.map((user) => (
