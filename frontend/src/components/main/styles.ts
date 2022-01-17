@@ -7,5 +7,6 @@ export const StyledMain = styled.main`
         display: flex;
         flex-wrap: wrap;
         box-sizing: border-box;
+        padding: 1rem 0;
     }
 `;

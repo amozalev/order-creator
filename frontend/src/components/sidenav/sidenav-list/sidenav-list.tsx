@@ -1,5 +1,4 @@
 import React from 'react';
-import { PropsWithChildren } from 'react';
 import * as S from './styles';
 import SidenavItem, { NavItem } from '../sidenav-item/sidenav-item';
 

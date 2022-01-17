@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import SideNavList from './sidenav-list';
 
 export const StyledSideNavList = styled.nav`
     display: flex;
