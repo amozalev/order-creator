@@ -1,7 +1,7 @@
 import { NavItem } from './components/sidenav/sidenav-item/sidenav-item';
 import { OrderType } from './components/orders/order/order';
 
-export const SIDENAVEITEMS: NavItem[] = [
+export const SIDENAVITEMS: NavItem[] = [
     { url: '/', label: 'Home' },
     { url: '/orders', label: 'Orders' },
     {
