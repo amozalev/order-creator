@@ -30,4 +30,9 @@ export const StyledSideNavItem = styled(NavLink)`
         color: #fff;
         background-color: #009688;
     }
+
+    svg {
+        padding: 0 15px;
+        font-size: 22px;
+    }
 `;

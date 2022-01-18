@@ -1,13 +1,27 @@
 import { NavItem } from './components/sidenav/sidenav-item/sidenav-item';
 import { OrderType } from './components/orders/order/order';
-import {UserType} from "./components/users/user/user";
+import { UserType } from './components/users/user/user';
+import {
+    faBriefcase,
+    faHome,
+    faUser
+} from '@fortawesome/free-solid-svg-icons';
 
 export const SIDENAVITEMS: NavItem[] = [
-    { url: '/', label: 'Home' },
-    { url: '/orders', label: 'Orders' },
+    {
+        url: '/',
+        label: 'Home',
+        icon: faHome
+    },
+    {
+        url: '/orders',
+        label: 'Orders',
+        icon: faBriefcase
+    },
     {
         url: '/users',
-        label: 'Users'
+        label: 'Users',
+        icon: faUser
     }
 ];
 
@@ -47,5 +61,5 @@ export const USERS: UserType[] = [
     {
         id: '3',
         name: 'Dmitry Pavlov'
-    },
-]
+    }
+];
