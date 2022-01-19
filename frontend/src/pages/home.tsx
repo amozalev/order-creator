@@ -10,10 +10,7 @@ import { Outlet } from 'react-router-dom';
 const HomePage: React.FC<any> = () => {
     return (
         <>
-            <Header>
-                <div>Header</div>
-                <div>Switch theme</div>
-            </Header>
+            <Header title={'Order creator'} />
             <Main>
                 <SideNavList navItems={SIDENAVITEMS} />
                 <Content>

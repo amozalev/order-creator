@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Props } from './sidenav-item';
 
 export const StyledSideNavItem = styled(NavLink)`
-    padding: 16px;
+    padding: 1.5rem;
     //width: 100%;
     display: block;
     //padding: 8px 16px;
@@ -32,7 +32,7 @@ export const StyledSideNavItem = styled(NavLink)`
     }
 
     svg {
-        padding: 0 15px;
+        padding-right: 15px;
         font-size: 22px;
     }
 `;

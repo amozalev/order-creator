@@ -8,6 +8,6 @@ export const StyledSideNavList = styled.nav`
         0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
     @media screen and (min-width: 30rem) {
-        flex: 20%;
+        flex: 10%;
     }
 `;
