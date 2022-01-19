@@ -1,16 +1,21 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const StyledHeader = styled.header`
     display: flex;
     flex-direction: row;
     flex: 0 0 content;
-    background-color: #009688;
     color: #fff;
     text-align: center;
     border-bottom: 1px solid;
     padding: 0 1.5rem;
     box-sizing: border-box;
 
+    ${({ theme }) => {
+        return css`
+            background-color: ${theme.colors.primary};
+        `;
+    }}
+    
     h1 {
         display: flex;
         flex-grow: 0;

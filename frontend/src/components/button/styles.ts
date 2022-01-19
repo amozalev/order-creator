@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ButtonColor, ButtonProps, ButtonSize, ButtonVariant } from './button';
-import { ITheme, StyledVariants } from '../../styles/interfaces/styled';
+import {ITheme, StyledVariants, ThemeEnum} from '../../styles/interfaces/styled';
 
 export const Button = styled.button<ButtonProps>`
     display: inline-flex;
@@ -34,7 +34,9 @@ export const Button = styled.button<ButtonProps>`
         switch (variant) {
             case ButtonVariant.solid:
                 return css`
-                    background-color: ${themeColor};
+                    background-color: ${theme.type == ThemeEnum.light
+                        ? themeColorLight
+                        : themeColorDark};
                     color: ${theme.colors.white};
 
                     :hover {

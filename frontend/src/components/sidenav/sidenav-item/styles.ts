@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
-import { Props } from './sidenav-item';
+import { NavLink } from 'react-router-dom';
 
 export const StyledSideNavItem = styled(NavLink)`
     padding: 1.5rem;
@@ -16,19 +15,23 @@ export const StyledSideNavItem = styled(NavLink)`
     color: #757575;
     text-decoration: none;
 
+    ${({ theme }) => {
+        return css`
+            :active {
+                color: #fff;
+                background-color: ${theme.colors.primary};
+            }
+
+            &[aria-current] {
+                color: #fff;
+                background-color: ${theme.colors.primary};
+            }
+        `;
+    }}
+    
     :hover {
         color: #fff;
         background-color: #ccc;
-    }
-
-    :active {
-        color: #fff;
-        background-color: #009688;
-    }
-
-    &[aria-current] {
-        color: #fff;
-        background-color: #009688;
     }
 
     svg {

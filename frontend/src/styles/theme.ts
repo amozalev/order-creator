@@ -4,7 +4,7 @@ import { DefaultTheme } from 'styled-components';
 export const baseTheme: ITheme = {
     colors: {
         primary: '#7986cb',
-        primaryDark: '#5c6bc0',
+        primaryDark: '#043c37',
         primaryLight: '#9fa8da',
         secondary: '#2b2b2b',
         secondaryDark: '#1f1f1f',
@@ -58,6 +58,7 @@ export const lightTheme: DefaultTheme = {
     type: ThemeEnum.light,
     colors: {
         ...baseTheme.colors,
+        primary: '#009688',
         bg: '#E5E4E8',
         font: '#19191B'
     }
@@ -68,6 +69,7 @@ export const darkTheme: DefaultTheme = {
     type: ThemeEnum.dark,
     colors: {
         ...baseTheme.colors,
+        primary: '#043c37',
         bg: '#19191B',
         font: '#E5E4E8'
     }
