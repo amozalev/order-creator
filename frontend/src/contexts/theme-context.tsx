@@ -8,7 +8,7 @@ export const ThemeContext = React.createContext({
 });
 
 const ThemeProvider = ({ children }: any) => {
-    const [light, setTheme] = useState<boolean>(true);
+    const [light, setTheme] = useState<boolean>(false);
     const switchTheme = () => setTheme(!light);
 
     return (

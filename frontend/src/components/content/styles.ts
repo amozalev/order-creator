@@ -6,5 +6,6 @@ export const StyledContent = styled.article`
 
     @media screen and (min-width: 30rem) {
         flex: 70%;
+        overflow: auto;
     }
 `;

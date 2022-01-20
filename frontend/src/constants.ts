@@ -38,14 +38,28 @@ export const ORDERS: OrderType[] = [
         title: 'Second order',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        ordererId: '1111'
+        ordererId: '222'
     },
     {
         id: '3',
         title: 'Third order',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        ordererId: '1111'
+        ordererId: '333'
+    },
+    {
+        id: '4',
+        title: 'Fourth order',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        ordererId: '444'
+    },
+    {
+        id: '5',
+        title: 'Fifth order',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        ordererId: '555'
     }
 ];
 
