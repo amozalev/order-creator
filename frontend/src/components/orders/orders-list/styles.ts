@@ -6,9 +6,7 @@ export const StyledOrdersList = styled.div`
     overflow: auto;
     height: calc(100vh - 230px);
     padding: 10px;
-
 `;
-
 
 export const Controller = styled.div`
     display: flex;

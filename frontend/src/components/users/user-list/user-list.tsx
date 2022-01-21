@@ -11,9 +11,9 @@ const UserList = () => {
     return (
         <>
             <S.Controller>
-                <Button>
-                    <Link to="/users/new">Add</Link>
-                </Button>
+                <Link to="new">
+                    <Button>Add</Button>
+                </Link>
             </S.Controller>
             <S.StyledUserList>
                 {users.map((user) => (

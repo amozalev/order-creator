@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const StyledUserList = styled.div`
     min-width: auto;
     display: block;
+    overflow: auto;
+    height: calc(100vh - 230px);
+    padding: 10px;
 `;
 
 export const Controller = styled.div`
