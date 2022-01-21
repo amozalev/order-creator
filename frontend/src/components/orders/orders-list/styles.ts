@@ -9,7 +9,8 @@ export const StyledOrdersList = styled.div`
 
 `;
 
-export const OrderController = styled.div`
+
+export const Controller = styled.div`
     display: flex;
     justify-content: flex-end;
     padding: 10px;
