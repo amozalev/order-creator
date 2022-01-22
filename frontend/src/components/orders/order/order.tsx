@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './styles';
+import Card from '../../card/card';
 
 export interface OrderType {
     id: string;
@@ -14,13 +15,15 @@ export interface OrderProps {
 
 const Order = ({ order }: OrderProps) => {
     return (
-        <S.StyledOrder>
-            <S.OrderImg />
-            <S.OrderContent>
-                <h3>{order.title}</h3>
-                <p>{order.description}</p>
-            </S.OrderContent>
-        </S.StyledOrder>
+        <Card
+            image={<S.OrderImg />}
+            content={
+                <S.OrderContent>
+                    <h3>{order.title}</h3>
+                    <p>{order.description}</p>
+                </S.OrderContent>
+            }
+        />
     );
 };
 

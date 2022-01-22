@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './styles';
+import Card from "../../card/card";
 
 export interface UserType {
     id: string;
@@ -12,12 +13,14 @@ export interface UserProps {
 
 const User = ({ user }: UserProps) => {
     return (
-        <S.StyledUser>
-            <S.Avatar />
-            <S.UserInfo>
-                <h3>{user.name}</h3>
-            </S.UserInfo>
-        </S.StyledUser>
+        <Card
+            image={<S.Avatar />}
+            content={
+                <S.UserInfo>
+                    <h3>{user.name}</h3>
+                </S.UserInfo>
+            }
+        />
     );
 };
 
