@@ -16,9 +16,23 @@ const NewOrder: React.FC<any> = () => {
         !!selectData.length && setOptions(selectData);
     }, [users]);
 
+    const getFormData = (event: any) => {
+        const temp = new FormData(event.target);
+        const data: { [key: string]: any }[] = [];
+        for (const [k, v] of temp) {
+            data.push({ [k]: v });
+        }
+        return data;
+    };
+
+    const onSubmit = (event: any) => {
+        event.preventDefault();
+        const data = getFormData(event);
+    };
+
     return (
         <S.StyledNewOrder className="container">
-            <form action="/">
+            <form onSubmit={onSubmit}>
                 <div className="row">
                     <div className="col-25">
                         <label htmlFor="title">Title</label>
