@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack')
 
 const port = process.env.PORT || 3000;
 
@@ -43,6 +44,9 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             template: './public/index.html'
+        }),
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify(process.env)
         })
     ],
     devServer: {
