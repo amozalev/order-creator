@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components';
 import { ButtonColor, ButtonProps, ButtonSize, ButtonVariant } from './button';
-import {ITheme, StyledVariants, ThemeEnum} from '../../styles/interfaces/styled';
+import {
+    ITheme,
+    StyledVariants,
+    ThemeEnum
+} from '../../styles/interfaces/styled';
 
 export const Button = styled.button<ButtonProps>`
     display: inline-flex;
@@ -30,7 +34,7 @@ export const Button = styled.button<ButtonProps>`
             theme.colors[(color + 'Light') as keyof ITheme['colors']];
         const themeColorDark =
             theme.colors[(color + 'Dark') as keyof ITheme['colors']];
-        console.log('==theme', theme.type)
+
         switch (variant) {
             case ButtonVariant.solid:
                 return css`
