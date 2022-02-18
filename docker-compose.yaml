@@ -15,6 +15,20 @@ services:
     command: npm run start
     volumes:
       - ./frontend/src:/usr/src/app/src
+    depends_on:
+      - api
+    networks:
+      - order-creator-network
+
+  api:
+    build: ./api
+    container_name: order-creator-api
+    command: npm run start
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+    environment:
+      - PORT=4000
     networks:
       - order-creator-network
 

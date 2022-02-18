@@ -9,7 +9,7 @@ class UsersController {
     } else if (!req.users)
       return res.status(404).send({ message: "Users not found." });
 
-    return res.status(200).send({ data: req.users });
+    return res.status(200).send(req.users);
   }
 
   async createUser(req, res) {
@@ -54,4 +54,4 @@ class UsersController {
   }
 }
 
-module.exports = new UsersController()
+module.exports = new UsersController();
