@@ -20,5 +20,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () =>
-  console.log(`Server listens http://:${port}`)
+  console.log(`Server listens http://localhost:${port}`)
 );
