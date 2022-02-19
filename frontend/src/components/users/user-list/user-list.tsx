@@ -1,36 +1,33 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import * as S from './styles';
 import User, { UserType } from '../user/user';
 import { Button } from '../../button/button';
 import { Link } from 'react-router-dom';
-import { DataLoader, useUsersLoader } from '../../../loaders/user-loader';
-import { ApiClient } from '../../../api/api-client';
+import { useUsersLoader } from '../../../loaders/user-loader';
+import { Spinner } from '../../spinner/spinner';
 
 const UserList = () => {
-    const apiUrl = process.env.REACT_APP_API || 'http://localhost:4000';
-    const apiClient = new ApiClient(apiUrl);
-    const {
-        data: users,
-        getData: getUsersCallback
-    } = useUsersLoader(apiClient);
-
-    useEffect(() => {
-        getUsersCallback();
-    }, []);
+    const { loading, data: users, error } = useUsersLoader('users');
 
     return (
-        <DataLoader>
-            <S.Controller>
-                <Link to="new">
-                    <Button>Add</Button>
-                </Link>
-            </S.Controller>
-            <S.StyledUserList>
-                {users.map((user: UserType) => (
-                    <User key={user.id} user={user} />
-                ))}
-            </S.StyledUserList>
-        </DataLoader>
+        <>
+            {loading ? (
+                <Spinner />
+            ) : (
+                <>
+                    <S.Controller>
+                        <Link to="new">
+                            <Button>Add</Button>
+                        </Link>
+                    </S.Controller>
+                    <S.StyledUserList>
+                        {users.map((user: UserType) => (
+                            <User key={user.id} user={user} />
+                        ))}
+                    </S.StyledUserList>
+                </>
+            )}
+        </>
     );
 };
 
