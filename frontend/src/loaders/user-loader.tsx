@@ -10,7 +10,7 @@ export type LoaderType = {
     data: any;
 };
 
-export const useUsersLoader = (url: string): LoaderType => {
+export const useUsersLoader = (path: string): LoaderType => {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<AxiosError | null>(null);
     const [data, setData] = useState<UserType[]>([]);
@@ -22,7 +22,7 @@ export const useUsersLoader = (url: string): LoaderType => {
         async function getUsers() {
             try {
                 setLoading(true);
-                const res: UserType[] = await apiClient.getData(url);
+                const res: UserType[] = await apiClient.getData(path);
                 setData(res);
                 setLoading(false);
             } catch (e: any) {
@@ -32,7 +32,7 @@ export const useUsersLoader = (url: string): LoaderType => {
         }
 
         getUsers();
-    }, [url]);
+    }, [path]);
 
     return { loading, data, error };
 };
