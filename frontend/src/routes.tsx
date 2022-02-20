@@ -6,6 +6,7 @@ import UserList from './components/users/user-list/user-list';
 import NewOrder from './components/orders/new-order/new-order';
 import Content from './components/content/content';
 import Orders from "./components/orders/orders";
+import NewUser from "./components/users/new-user/new-user";
 
 export const Routing = () => (
     <Router>
@@ -17,7 +18,7 @@ export const Routing = () => (
                 </Route>
                 <Route path="users" element={<Content />}>
                     <Route path="" element={<UserList />} />
-                    <Route path="new" element={<NewOrder />} />
+                    <Route path="new" element={<NewUser />} />
                 </Route>
             </Route>
         </Routes>

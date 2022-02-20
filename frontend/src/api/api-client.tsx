@@ -14,12 +14,20 @@ export class ApiClient<T extends {}> {
 
     public async getData(path: string): Promise<T[]> {
         try {
-            const res: AxiosResponse<T[]> = await this.client.get(`${path}`);
+            const res: AxiosResponse<T[]> = await this.client.get(path);
             return res.data;
         } catch (e: any) {
             return [];
         }
     }
 
-    public saveItem(item: T) {}
+    public async saveItem(path: string, item: any): Promise<T | null> {
+        try {
+            const res: AxiosResponse<T> = await this.client.post(path, item);
+            return res.data;
+        } catch (e: any) {
+            return null;
+        }
+    }
+
 }
