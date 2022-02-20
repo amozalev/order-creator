@@ -1,28 +1,27 @@
 import React, { useEffect } from 'react';
 import { ApiClient } from '../api/api-client';
-import { UserType } from '../components/users/user/user';
 import { useState } from 'react';
 import { AxiosError } from 'axios';
 
-export type LoaderType = {
+export type LoaderType<T> = {
     loading: boolean;
     error: AxiosError | null;
-    data: any;
+    data: T[];
 };
 
-export const useUsersLoader = (path: string): LoaderType => {
+export const useDataLoader = <T extends {}>(path: string): LoaderType<T> => {
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<AxiosError | null>(null);
-    const [data, setData] = useState<UserType[]>([]);
+    const [data, setData] = useState<T[]>([]);
 
     const apiUrl = process.env.REACT_APP_API || 'http://localhost:4000';
-    const apiClient = new ApiClient<UserType>(apiUrl);
+    const apiClient = new ApiClient<T>(apiUrl);
 
     useEffect(() => {
-        async function getUsers() {
+        async function getdata() {
             try {
                 setLoading(true);
-                const res: UserType[] = await apiClient.getData(path);
+                const res: T[] = await apiClient.getData(path);
                 setData(res);
                 setLoading(false);
             } catch (e: any) {
@@ -31,7 +30,7 @@ export const useUsersLoader = (path: string): LoaderType => {
             }
         }
 
-        getUsers();
+        getdata();
     }, [path]);
 
     return { loading, data, error };

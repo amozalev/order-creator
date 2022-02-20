@@ -1,29 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import { useDataLoader } from '../../../hooks/use-data-loader';
-import { USERS } from '../../../constants';
 import { UserType } from '../../users/user/user';
 import Select from 'react-select';
+import { useDataLoader } from '../../../hooks/data-loader';
+import { getFormData } from '../../utils';
 
 const NewOrder: React.FC<any> = () => {
-    const { loading, data: users } = useDataLoader<UserType>({
-        dataSource: USERS
-    });
+    const { loading, data: users, error } = useDataLoader<UserType>('users');
     const [options, setOptions] = useState<any>([]);
 
     useEffect(() => {
-        const selectData = users.map((i) => ({ value: i.id, label: i.name }));
+        const selectData = users.map((i: UserType) => ({
+            value: i.id,
+            label: i.name
+        }));
         !!selectData.length && setOptions(selectData);
     }, [users]);
-
-    const getFormData = (event: any) => {
-        const temp = new FormData(event.target);
-        const data: { [key: string]: FormDataEntryValue }[] = [];
-        for (const [k, v] of temp) {
-            data.push({ [k]: v });
-        }
-        return data;
-    };
 
     const onSubmit = (event: any) => {
         event.preventDefault();
