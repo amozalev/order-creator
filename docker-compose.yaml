@@ -30,8 +30,11 @@ services:
     ports:
       - "4000:4000"
     restart: unless-stopped
+    volumes:
+      - ./api/src:/usr/src/app/src
     environment:
       - PORT=4000
+      - CHOKIDAR_USEPOLLING=true
     networks:
       - order-creator-network
 
