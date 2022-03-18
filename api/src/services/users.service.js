@@ -1,9 +1,11 @@
 const fs = require("fs");
 
 class UsersService {
+  filePath = `${process.cwd()}/src/data/users.json`;
+
   getUsers() {
     return new Promise((res, rej) => {
-      fs.readFile("users.json", (err, data) => {
+      fs.readFile(this.filePath, (err, data) => {
         if (err) {
           return res(false);
         }
@@ -14,7 +16,7 @@ class UsersService {
 
   createUser(data) {
     return new Promise((res, rej) => {
-      fs.writeFile("users.json", JSON.stringify(data), (err, response) => {
+      fs.writeFile(this.filePath, JSON.stringify(data), (err, response) => {
         if (err) return res(false);
 
         return res({ message: "User created." });
@@ -24,7 +26,7 @@ class UsersService {
 
   updateUser(data) {
     return new Promise((res, rej) => {
-      fs.writeFile("users.json", JSON.stringify(data), (err, response) => {
+      fs.writeFile(this.filePath, JSON.stringify(data), (err, response) => {
         if (err) return res(false);
 
         return res({ message: "User updated." });
@@ -34,7 +36,7 @@ class UsersService {
 
   deleteUser(data) {
     return new Promise((res, rej) => {
-      fs.writeFile("users.json", JSON.stringify(data), (err, response) => {
+      fs.writeFile(this.filePath, JSON.stringify(data), (err, response) => {
         if (err) return res(false);
 
         return res({ message: "User deleted." });

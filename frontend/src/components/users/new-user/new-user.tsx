@@ -13,7 +13,7 @@ const NewUser: React.FC<any> = () => {
     const onSubmit = (event: any) => {
         event.preventDefault();
         const data = getFormData(event);
-        data['id'] = Math.max(...users.map((i) => parseInt(i.id)));
+        data['id'] = `${Math.max(...users.map((i) => parseInt(i.id))) + 1}`;
         const payload = { user: data };
         apiClient.saveItem('users', payload);
     };

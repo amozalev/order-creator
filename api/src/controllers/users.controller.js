@@ -17,8 +17,7 @@ class UsersController {
       if (req.users.hasOwnProperty(req.body.user.id))
         return res.status(409).send({ message: "User already exists." });
 
-      req.users[req.body.user.id] = req.body.user;
-
+      req.users.push({...req.body.user});
       let result = await UsersService.createUser(req.users);
 
       if (result) return res.status(200).send(result);

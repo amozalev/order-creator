@@ -4,10 +4,10 @@ const express = require("express"),
   UsersService = require("../services/users.service");
 
 router.use(async (req, res, next) => {
-  let data = await UsersService.getUsers();
+  let users = await UsersService.getUsers();
 
-  if (data) {
-    req.users = data;
+  if (users) {
+    req.users = [...users];
     next();
   } else return res.status(500).send({ message: "Error while getting users" });
 });
